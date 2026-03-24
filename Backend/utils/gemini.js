@@ -9,9 +9,15 @@ const getGeminiResponse = async (message) => {
       model: "gemini-1.5-flash"
     });
 
-    const result = await model.generateContent(message);
-    const response = await result.response;
+    const result = await model.generateContent({
+      contents: [
+        {
+          parts: [{ text: message }]
+        }
+      ]
+    });
 
+    const response = await result.response;
     return response.text();
 
   } catch (error) {
