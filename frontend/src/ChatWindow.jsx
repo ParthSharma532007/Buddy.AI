@@ -26,7 +26,7 @@ function ChatWindow() {
         };
 
         try {
-            const response = await fetch("https://buddy-ai-4a8k.onrender.com/api/chat", options);
+            const response = await fetch("https://buddy-ai-backend-hjq5.onrender.com/api/chat", options);
             const res = await response.json();
             console.log(res);
             setReply(res.reply);
